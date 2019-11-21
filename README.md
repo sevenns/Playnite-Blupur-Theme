@@ -1,2 +1,6 @@
-# Playnite-Blupur-Theme
-Theme for Playnite 
+# Playnite Blupur Theme
+
+### Desktop
+
+- Preview
+![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Desktop/Blupur/preview.jpg)
