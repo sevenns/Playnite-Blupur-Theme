@@ -13,8 +13,8 @@
 ## Desktop
 
 - Info
-  - Theme version: **0.3b**
-  - Supporting Playnite version: **6.0**
+  - Theme version: **0.4b**
+  - Supporting Playnite version: **6.1**
 - Preview
   ![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Desktop/Blupur/preview.jpg)
   
