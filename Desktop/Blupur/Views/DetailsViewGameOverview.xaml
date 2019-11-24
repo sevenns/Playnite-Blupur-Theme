@@ -29,14 +29,6 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
-                                <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image Name="PART_ImageCover"
-                                                Margin="0,10,0,30"
-                                                Height="{Settings GameDetailsCoverHeight}"
-                                                HorizontalAlignment="Center"
-                                                StretchDirection="Both" Stretch="Uniform"
-                                                RenderOptions.BitmapScalingMode="Fant" />
-                                </Grid>
                                 <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock FontFamily="{DynamicResource FontFamily}"
                                                         Text="{Binding Game.DisplayName}"
@@ -68,15 +60,31 @@
                                 </Grid>
                             </Grid>
 
-                            <Grid Grid.Row="3" HorizontalAlignment="Stretch" Margin="10,20,10,0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
+                            <Grid Grid.Row="3" MaxWidth="1152" Margin="20,0,20,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="0"/>
+                                </Grid.ColumnDefinitions>
 
-                                <DockPanel MaxWidth="1024" Grid.Row="1">
-                                    <StackPanel DockPanel.Dock="Left" Width="300"
-                                                Margin="2,0,0,0">
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image
+                                        Grid.Row="1"
+                                        Name="PART_ImageCover"
+                                        Height="{Settings GameDetailsCoverHeight}"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Left"
+                                        StretchDirection="Both" Stretch="Uniform"
+                                        RenderOptions.BitmapScalingMode="Fant" />
+
+                                    <StackPanel Grid.Row="2">
                                         <StackPanel.Resources>
                                             <Style TargetType="ItemsControl">
                                                 <Setter Property="VerticalAlignment" Value="Center" />
@@ -90,8 +98,14 @@
                                         </StackPanel.Resources>
 
                                         <GridEx Margin="0,5,0,10"
-                                                ColumnCount="2" StarColumns="1"
-                                                RowCount="20" AutoLayoutColumns="2">
+                                            ColumnCount="2" StarColumns="1"
+                                            RowCount="20" AutoLayoutColumns="2">
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
                                             <Grid.Resources>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}" />
                                             </Grid.Resources>
@@ -146,24 +160,24 @@
 
                                             <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
                                             <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
+                                                    Style="{DynamicResource TextBlockGameScore}" />
 
                                             <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
                                             <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
+                                                    Style="{DynamicResource TextBlockGameScore}" />
 
                                             <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
                                             <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
+                                                    Style="{DynamicResource TextBlockGameScore}" />
 
                                             <Label Name="PART_ElemLinks" Content="{DynamicResource LOCLinksLabel}" />
                                             <ItemsControl Name="PART_ItemsLinks" />
                                         </GridEx>
                                     </StackPanel>
+                                </Grid>
 
-                                    <StackPanel Name="PART_ElemDescription"
-                                                DockPanel.Dock="Right" Margin="10,0,2,0">
-                                        <HtmlTextView x:Name="PART_HtmlDescription"
+                                <StackPanel Name="PART_ElemDescription" Grid.Column="2" Margin="20,0,2,0">
+                                    <HtmlTextView x:Name="PART_HtmlDescription"
                                                       Margin="0,5,0,5"
                                                         HtmlFontSize="{DynamicResource FontSize}"
                                                         HtmlFontFamily="{DynamicResource FontFamily}"
@@ -171,8 +185,7 @@
                                                         LinkForeground="{DynamicResource GlyphColor}"                                      
                                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                                         ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                                    </StackPanel>
-                                </DockPanel>
+                                </StackPanel>
                             </Grid>
                         </Grid>
                     </ScrollViewer>
