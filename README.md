@@ -14,7 +14,7 @@
 ## Desktop
 
 - Info
-  - Theme version: **0.4b**
+  - Theme version: [**0.4b**](https://github.com/sevenns/Playnite-Blupur-Theme/releases/tag/desktop-0.4b)
   - Supported Playnite version: **6.1 and later**
 
 - Preview
@@ -47,8 +47,9 @@
 ## Fullscreen
 
 - Info
-  - Theme version: **0.1b**
+  - Theme version: [**0.3b**](https://github.com/sevenns/Playnite-Blupur-Theme/releases/tag/fullscreen-0.3b)
   - Supported Playnite version: **6.1 and later**
+
 - Preview
   ![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Fullscreen/Blupur/preview.jpg)
 
