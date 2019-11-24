@@ -3,14 +3,15 @@
     
     <Style TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Background" Value="{DynamicResource SelectionLightBrush}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Padding" Value="12,5,12,5" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
         <Setter Property="BorderThickness" Value="0" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -23,11 +24,14 @@
                                 <ContentPresenter />
                         </TextBlock>
 
-                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                x:Name="BorderStandard" />
-                        
-                        <Border x:Name="BorderFocus" Margin="-3"
+                                x:Name="BorderStandard"
+                                BorderThickness="3"
+                                Margin="-3" />
+
+                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                                x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 BorderBrush="{DynamicResource SelectionBrush}"
                                 BorderThickness="3" Visibility="Hidden" />

@@ -28,7 +28,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True" />
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Fill" Value="{DynamicResource GlyphBrush}" TargetName="HoverRectangle" />
+                            <Setter Property="Fill" Value="{DynamicResource Blupur_FuchsiaBrush}" TargetName="HoverRectangle" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -48,7 +48,7 @@
                             <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarButtonHeightKey}">42</sys:Double>
                         </Track.Resources>
                         <Track.Thumb>
-                            <Thumb Width="60" />
+                            <Thumb Width="20" />
                         </Track.Thumb>
                         <Track.DecreaseRepeatButton>
                             <RepeatButton Style="{DynamicResource ScrollBarTrackButton}"

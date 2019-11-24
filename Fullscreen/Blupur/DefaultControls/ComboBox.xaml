@@ -39,15 +39,19 @@
                                               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
                         </TextBlock>
-         
+
                         <Popup x:Name="Popup" IsOpen="{TemplateBinding IsDropDownOpen}"
                                Placement="Bottom" Focusable="False" AllowsTransparency="True">
                             <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                                <Border BorderBrush="{DynamicResource SelectionLightBrush}"                                        
-                                        Background="{DynamicResource ControlBackgroundDarkBrush}"
-                                        BorderThickness="2">
+                                <Grid.Effect>
+                                    <DropShadowEffect Color="{DynamicResource Blupur_AstronautColor}" Direction="270" ShadowDepth="0" BlurRadius="15"/>
+                                </Grid.Effect>
+                                <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                                        BorderBrush="{DynamicResource Blupur_AstronautBrush}"                                        
+                                        Background="{DynamicResource Blupur_CloudBurstBrush}"
+                                        BorderThickness="3">
                                     <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                                                   VerticalScrollBarVisibility="Auto">
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
@@ -56,11 +60,13 @@
                             </Grid>
                         </Popup>
 
-                        <Border x:Name="BorderStandard"
-                                BorderBrush="{DynamicResource SelectionLightBrush}"
-                                BorderThickness="2" Margin="-2" />
+                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                                x:Name="BorderStandard"
+                                BorderBrush="{DynamicResource ControlBackgroundDarkBrush}"
+                                BorderThickness="3" Margin="-3" />
 
-                        <Border x:Name="BorderFocus" Margin="-3" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                                x:Name="BorderFocus" Margin="-3" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 BorderBrush="{DynamicResource SelectionBrush}"
                                 BorderThickness="3" Visibility="Hidden" />
                     </Grid>

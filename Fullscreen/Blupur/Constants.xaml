@@ -37,6 +37,10 @@
     <SolidColorBrush x:Key="SelectionBrush" Color="{DynamicResource Blupur_MediumRedVioletColor}" />
     <SolidColorBrush x:Key="SelectionLightBrush" Color="{DynamicResource Blupur_HoneyFlowerColor}" />
     <SolidColorBrush x:Key="OverlayBrush" Color="{DynamicResource Blupur_MirageOverlayColor}" />
+    <SolidColorBrush x:Key="GameDetailsBackgroundBrush" Color="{DynamicResource Blupur_MirageColor}" />
+    <SolidColorBrush x:Key="TopBarBackgroundBrush" Color="{DynamicResource Blupur_MirageColor}" />
+    <SolidColorBrush x:Key="MainBackgourndBrush" Color="{DynamicResource Blupur_MirageColor}" />
+    <SolidColorBrush x:Key="OverlayMenuBackgroundBrush" Color="{DynamicResource Blupur_CloudBurstColor}" />
 
 
     <SolidColorBrush x:Key="Blupur_TestBrush" Color="{DynamicResource Blupur_TestColor}" />
@@ -50,37 +54,17 @@
 
     <sys:Double x:Key="FontSize">22</sys:Double>
     <sys:Double x:Key="FilterPanelWidth">300</sys:Double>
-    
+    <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
+
     <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
         <Setter Property="FontFamily" Value="{DynamicResource FontTitilliumWebLight}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
     </Style>
 
-    <RadialGradientBrush x:Key="MainBackgourndBrush" GradientOrigin="0.5,0.1" Center="0.5,0.2" RadiusX="0.5" RadiusY="0.7">
-        <RadialGradientBrush.GradientStops>
-            <GradientStop Color="{DynamicResource Blupur_MirageColor}" Offset="0" />
-            <GradientStop Color="{DynamicResource Blupur_MirageColor}" Offset="1.0" />
-        </RadialGradientBrush.GradientStops>
-    </RadialGradientBrush>
-
-    <LinearGradientBrush x:Key="TopBarBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1" >
-        <GradientStop Color="{DynamicResource Blupur_CloudBurstColor}" Offset="0"/>
-        <GradientStop Color="{DynamicResource Blupur_CloudBurstColor}" Offset="1.0"/>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="BottomBarBackgroundBrush" StartPoint="-0.5,0.5" EndPoint="1.5,1" >
-        <GradientStop Color="{DynamicResource Blupur_CloudBurstColor}" Offset="0"/>
-        <GradientStop Color="{DynamicResource Blupur_TestColor}" Offset="1.0"/>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="OverlayMenuBackgroundBrush" StartPoint="0.5,-0.5" EndPoint="1,1.5" >
-        <GradientStop Color="{DynamicResource Blupur_AstronautColor}" Offset="0"/>
-        <GradientStop Color="{DynamicResource Blupur_AstronautColor}" Offset="1.0"/>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="GameDetailsBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,0.4" >
-        <GradientStop Color="#00000000" Offset="0.0"/>
+    <RadialGradientBrush x:Key="ImageRadialGradientBackground">
+        <GradientStop Color="#00000000"/>
         <GradientStop Color="{DynamicResource Blupur_MirageColor}" Offset="1"/>
-    </LinearGradientBrush>
+    </RadialGradientBrush>
+    <SolidColorBrush x:Key="ImageOverlay" Color="{DynamicResource Blupur_MirageColor}" Opacity="0.45"/>
 </ResourceDictionary>

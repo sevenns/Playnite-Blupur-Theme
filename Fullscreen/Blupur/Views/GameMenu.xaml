@@ -20,21 +20,29 @@
                                 VerticalAlignment="Center">
                             <DockPanel>
                                 <Grid DockPanel.Dock="Top">
-                                    <Image Source="{Binding Game.CoverImageObject}" />
-                                    <TextBlock Text="{Binding Game.DisplayName}"
-                                               Background="#AA000000"
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="1"
+                                               Text="{Binding Game.DisplayName}"
+                                               FontFamily="{DynamicResource FontTitilliumWebBold}"
                                                Style="{DynamicResource TextBlockBaseStyle}"
-                                               Padding="15,15,15,15" TextWrapping="Wrap"
-                                               HorizontalAlignment="Stretch"
-                                               VerticalAlignment="Bottom">
+                                               Padding="10" TextWrapping="Wrap"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontSize="24">
                                     </TextBlock>
+                                    <Image Grid.Row="2" Margin="12,5" Source="{Binding Game.CoverImageObject}" />
                                 </Grid>                                
-                                <ItemsControlEx x:Name="PART_ItemsHost" Focusable="False">
+                                <ItemsControlEx x:Name="PART_ItemsHost" Focusable="False" Margin="0,5">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <ButtonEx Content="{Binding Title}"
                                                       Command="{Binding Command}"
-                                                      Margin="5" />
+                                                      Margin="15,10" />
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControlEx>

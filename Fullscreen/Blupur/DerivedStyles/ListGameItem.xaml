@@ -16,18 +16,18 @@
                         <Storyboard x:Key="FocusedOn">
                             <DoubleAnimation Storyboard.TargetName="ScaleTransform"
                                              Storyboard.TargetProperty="ScaleX"
-                                             From="1" To="1.06" Duration="0:0:0.1"/>
+                                             From="1" To="1.04" Duration="0:0:0.1"/>
                             <DoubleAnimation Storyboard.TargetName="ScaleTransform"
                                              Storyboard.TargetProperty="ScaleY"
-                                             From="1" To="1.06" Duration="0:0:0.1"/>
+                                             From="1" To="1.04" Duration="0:0:0.1"/>
                         </Storyboard>
                         <Storyboard x:Key="FocusedOff">
                             <DoubleAnimation Storyboard.TargetName="ScaleTransform"
                                              Storyboard.TargetProperty="ScaleX"
-                                             From="1.06" To="1" Duration="0:0:0.2"/>
+                                             From="1.04" To="1" Duration="0:0:0.1"/>
                             <DoubleAnimation Storyboard.TargetName="ScaleTransform"
                                              Storyboard.TargetProperty="ScaleY"
-                                             From="1.06" To="1" Duration="0:0:0.2"/>
+                                             From="1.04" To="1" Duration="0:0:0.1"/>
                         </Storyboard>
                     </ControlTemplate.Resources>
                     <Grid Margin="{Settings FullscreenItemSpacingMargin}"
@@ -36,9 +36,13 @@
                         <Grid.RenderTransform>
                             <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1" />
                         </Grid.RenderTransform>
-                        <Image RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
-                                   VerticalAlignment="Center" HorizontalAlignment="Center"
-                                   Stretch="{Settings CoverArtStretch}">
+                        <Image
+                            x:Name="ListItemImage"
+                            RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Stretch="{Settings CoverArtStretch}"
+                            Opacity="0.65">
+
                             <Image.Source>
                                 <PriorityBinding>
                                     <Binding Path="CoverImageObject" Mode="OneWay" 
@@ -53,14 +57,17 @@
                                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                                        TextAlignment="Center" Padding="5"                                    
                                        Background="{DynamicResource ControlBackgroundDarkBrush}"/>
-                        <Border CornerRadius="3" BorderThickness="3" BorderBrush="{DynamicResource ControlBackgroundBrush}"
+                        <Border BorderThickness="3" BorderBrush="{DynamicResource ControlBackgroundDarkBrush}"
                                     Margin="-3"/>
                         <Border x:Name="MainBorder" BorderThickness="5" BorderBrush="{DynamicResource SelectionBrush}"
-                                    Margin="-5" Visibility="Collapsed" CornerRadius="3">
+                                    Margin="-5" Visibility="Collapsed">
                             <Border.Effect>
                                 <DropShadowEffect
-                                                      Color="{DynamicResource Blupur_FuchsiaColor}"
-                                                      BlurRadius="50" Direction="180" ShadowDepth="0" RenderingBias="Quality"/>
+                                    Color="{DynamicResource Blupur_MediumRedVioletColor}"
+                                    BlurRadius="20"
+                                    ShadowDepth="0"
+                                    Opacity="1"
+                                    Direction="270"/>
                             </Border.Effect>
                         </Border>
                     </Grid>
@@ -68,6 +75,7 @@
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
+                            <Setter Property="Opacity" Value="1" TargetName="ListItemImage"/>
                             <Trigger.ExitActions>
                                 <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
                             </Trigger.ExitActions>

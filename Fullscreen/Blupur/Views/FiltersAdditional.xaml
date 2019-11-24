@@ -5,7 +5,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type FiltersAdditional}">
-                    <DockPanel Background="{DynamicResource OverlayMenuBackgroundBrush}"
+                    <DockPanel Background="{DynamicResource TopBarBackgroundBrush}"
                                 Width="{StaticResource FilterPanelWidth}"
                                 x:Name="PART_MenuHost">
                         <DockPanel.Resources>

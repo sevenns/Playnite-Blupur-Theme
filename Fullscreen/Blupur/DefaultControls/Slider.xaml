@@ -42,7 +42,7 @@
                         <Border Height="6" Background="{DynamicResource ControlBackgroundBrush}" />
                         <Track Grid.Row="1" x:Name="PART_Track" Margin="0,3,0,3" >
                             <Track.Thumb>
-                                <Thumb Width="8" Foreground="{TemplateBinding Foreground}"
+                                <Thumb Width="6" Foreground="{TemplateBinding Foreground}"
                                        Style="{StaticResource SliderThumb}"/>
                             </Track.Thumb>
                             <Track.DecreaseRepeatButton>
@@ -60,11 +60,13 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">

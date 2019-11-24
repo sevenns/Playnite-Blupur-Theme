@@ -21,6 +21,7 @@
 
                             <Border Background="{DynamicResource ControlBackgroundDarkBrush}"
                                     VerticalAlignment="Center"
+                                    CornerRadius="{DynamicResource ControlCornerRadius}"
                                     BorderThickness="2" BorderBrush="{DynamicResource ControlBackgroundBrush}"
                                     Grid.Column="0" Margin="0,0,10,0" Width="24" Height="24">
                                 <Viewbox x:Name="CheckIcon" Visibility="Collapsed">
@@ -37,7 +38,8 @@
                                 <ContentPresenter RecognizesAccessKey="True" />
                             </TextBlock>
                         </Grid>
-                        <Border x:Name="BorderFocus" Margin="-3"
+                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                                x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 BorderBrush="{DynamicResource SelectionBrush}"
                                 BorderThickness="3" Visibility="Hidden" />
