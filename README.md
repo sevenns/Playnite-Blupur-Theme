@@ -15,7 +15,7 @@
 
 - Info
   - Theme version: **0.4b**
-  - Supporting Playnite version: **6.1**
+  - Supported Playnite version: **6.1 or above**
 
 - Preview
   ![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Desktop/Blupur/preview.jpg)
@@ -48,7 +48,7 @@
 
 - Info
   - Theme version: **0.1b**
-  - Supporting Playnite version: **6.1**
+  - Supported Playnite version: **6.1 or above**
 - Preview
   ![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Fullscreen/Blupur/preview.jpg)
 
