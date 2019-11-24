@@ -3,10 +3,13 @@
 	<h3 align="center">Playnite Blupur Theme</h3>
 </p>
 
-<p align="center">
-  Theme for Playnite video game library manager.
-  <a href="https://playnite.link/docs/tutorials/themes/installing.html">How to install</a>
-</p>
+<p align="center">Theme for Playnite video game library manager.</p>
+
+## How to install
+
+- Download `Desktop` or `Fullscreen` version from [here](https://github.com/sevenns/Playnite-Blupur-Theme/releases)
+- Unzip
+- Drag `.pthm` file into the Playnite window
 
 ## Desktop
 
