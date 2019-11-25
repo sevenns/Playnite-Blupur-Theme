@@ -177,6 +177,14 @@
                                 </Grid>
 
                                 <StackPanel Name="PART_ElemDescription" Grid.Column="2" Margin="20,0,2,0">
+                                    <TextBlock
+                                        Text="{DynamicResource LOCGameDescriptionTitle}"
+                                        FontSize="28"
+                                        Foreground="{StaticResource TextBrush}"
+                                        FontWeight="Bold"
+                                        Margin="0,0,0,20"
+                                    />
+
                                     <HtmlTextView x:Name="PART_HtmlDescription"
                                                       Margin="0,5,0,5"
                                                         HtmlFontSize="{DynamicResource FontSize}"
