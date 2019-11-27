@@ -17,18 +17,20 @@
     </Style>
 
     <Style TargetType="{x:Type Thumb}">
-        <Setter Property="Background" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource Blupur_AstronautBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
-                    <Rectangle x:Name="HoverRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                Width="Auto" Height="Auto" Stroke="{x:Null}"
-                                Margin="4.5,1,4.5,1" MinHeight="20"
-                                Fill="{TemplateBinding Background}" />                
+                    <Border
+                        x:Name="HoverRectangle"
+                        Width="10"
+                        CornerRadius="{DynamicResource ControlCornerRadius}"
+                        Background="{TemplateBinding Background}"
+                    />
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True" />
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Fill" Value="{DynamicResource Blupur_FuchsiaBrush}" TargetName="HoverRectangle" />
+                            <Setter Property="Background" Value="{DynamicResource Blupur_FuchsiaBrush}" TargetName="HoverRectangle" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
