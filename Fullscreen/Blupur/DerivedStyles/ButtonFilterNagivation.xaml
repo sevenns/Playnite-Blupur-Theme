@@ -29,12 +29,14 @@
                                 <ContentPresenter />
                             </TextBlock>
                         </DockPanel>
-                        
-                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+
+                        <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 x:Name="BorderStandard" />
 
                         <Border x:Name="BorderFocus" Margin="-3"
+                                CornerRadius="{DynamicResource ControlCornerRadius}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 BorderBrush="{DynamicResource SelectionBrush}"
                                 BorderThickness="3" Visibility="Hidden" />
