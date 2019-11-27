@@ -7,15 +7,11 @@
 
 ## How to install
 
-- Download `Desktop` or `Fullscreen` version from [here](https://github.com/sevenns/Playnite-Blupur-Theme/releases)
+- [Download](https://github.com/sevenns/Playnite-Blupur-Theme/releases) `Desktop` or `Fullscreen` version
 - Unzip
 - Drag `.pthm` file into the Playnite window
 
 ## Desktop
-
-- Info
-  - Theme version: [**0.4b**](https://github.com/sevenns/Playnite-Blupur-Theme/releases/tag/desktop-0.4b)
-  - Supported Playnite version: **6.1 and later**
 
 - Preview
   ![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Desktop/Blupur/preview.jpg)
@@ -45,10 +41,6 @@
       - *Details view game list position* - `Left` `454`
 
 ## Fullscreen
-
-- Info
-  - Theme version: [**0.3b**](https://github.com/sevenns/Playnite-Blupur-Theme/releases/tag/fullscreen-0.3b)
-  - Supported Playnite version: **6.1 and later**
 
 - Preview
   ![Playnite Blupur Theme Preview](https://raw.githubusercontent.com/sevenns/Playnite-Blupur-Theme/master/Fullscreen/Blupur/preview.jpg)
