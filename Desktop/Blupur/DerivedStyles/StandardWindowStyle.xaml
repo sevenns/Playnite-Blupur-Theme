@@ -29,7 +29,7 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}">
                             <Grid>
-                                <ContentPresenter Margin="0,25,0,0"/>
+                                <ContentPresenter Margin="0,40,0,0"/>
                                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                                     <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                                         <TextBlock Text="{TemplateBinding Title}" DockPanel.Dock="Left" Margin="10,3,0,0" VerticalAlignment="Center"
