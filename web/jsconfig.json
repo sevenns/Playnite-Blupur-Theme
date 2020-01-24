@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "$Root/*": ["./*"],
+      "$Config/*": ["Config/*"],
+      "$Helpers/*": ["Helpers/*"],
+
+      "$App/*": ["App/*"],
+      "$Pages/*": ["App/Pages/*"],
+      "$Store/*": ["App/Store/*"],
+      "$Static/*": ["App/Static/*"],
+      "$Assets/*": ["App/Assets/*"],
+      "$Layouts/*": ["App/Layouts/*"],
+      "$Plugins/*": ["App/Plugins/*"],
+      "$Components/*": ["App/Components/*"],
+      "$Middleware/*": ["App/Middleware/*"]
+    }
+  },
+  "include": [
+    "App/**/*"
+  ]
+}

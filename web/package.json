@@ -1,0 +1,39 @@
+{
+  "name": "playnite-blupur-theme-customizer",
+  "version": "1.0.0",
+  "description": "Customizer for Playnite Blupur theme",
+  "repository": "https://github.com/sevenns/Playnite-Blupur-Theme",
+  "author": "sevenns <alexander@sevenns.dev>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "babel-node --presets @babel/preset-env Bin/Dev.js",
+    "lint": "babel-node --presets @babel/preset-env Bin/Lint.js",
+    "lint:fix": "babel-node --presets @babel/preset-env Bin/Lint.js --fix",
+    "start": "babel-node --presets @babel/preset-env Bin/Start.js",
+    "build": "babel-node --presets @babel/preset-env Bin/Build.js",
+    "bootstrap": "babel-node --presets @babel/preset-env Bin/Bootstrap.js"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@nuxtjs/axios": "^5.9.3",
+    "chalk": "^3.0.0",
+    "cross-spawn": "^7.0.1",
+    "moment": "^2.24.0",
+    "nuxt": "^2.11.0",
+    "sanitize.css": "^11.0.0",
+    "vue-styled-components": "^1.4.14"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "babel-eslint": "^10.0.3",
+    "commander": "^4.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "inquirer": "^7.0.3"
+  }
+}

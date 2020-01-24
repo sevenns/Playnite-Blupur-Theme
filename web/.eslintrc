@@ -1,0 +1,20 @@
+{
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["@nuxtjs"],
+  "rules": {
+    "semi": ["error", "always"],
+    "space-before-function-paren": 0,
+    "no-console": 0,
+
+    "vue/singleline-html-element-content-newline": 0,
+    "vue/attributes-order": 0
+  }
+}
