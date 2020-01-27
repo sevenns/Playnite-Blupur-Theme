@@ -27,9 +27,10 @@
     <Color x:Key="PopupBorderColor">#3e6184</Color>
     <Color x:Key="BackgroundToneColor">#2C3A67</Color>
     <Color x:Key="GridItemBackgroundColor">#151e3d</Color>
-    <Color x:Key="PanelSeparatorColor">#662C3A67</Color>
 
+    <Color x:Key="Blupur_TestColor">#ff0000</Color>
     <Color x:Key="Blupur_MirageColor">#202040</Color>
+    <Color x:Key="Blupur_PortGoreColor">#262A4F</Color>
     <Color x:Key="Blupur_CloudBurstColor">#202060</Color>
     <Color x:Key="Blupur_AstronautColor">#252570</Color>
     <Color x:Key="Blupur_HoneyFlowerColor">#602080</Color>
@@ -50,13 +51,14 @@
     <SolidColorBrush x:Key="TooltipBackgroundBrush" Color="{DynamicResource BackgroundToneColor}" />
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource Blupur_HoneyFlowerColor}" />
     <SolidColorBrush x:Key="GridItemBackgroundBrush" Color="{DynamicResource Blupur_CloudBurstColor}" />
-    <SolidColorBrush x:Key="PanelSeparatorBrush" Color="{DynamicResource PanelSeparatorColor}" />
+    <SolidColorBrush x:Key="PanelSeparatorBrush" Color="{DynamicResource Blupur_PortGoreColor}" />
     <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource Blupur_CloudBurstColor}" />
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource Blupur_MirageColor}" />
 
     <SolidColorBrush x:Key="WhiteBrush" Color="{DynamicResource WhiteColor}" />
-    <SolidColorBrush x:Key="Blupur_TestBrush" Color="#ff0000" />
+    <SolidColorBrush x:Key="Blupur_TestBrush" Color="{DynamicResource Blupur_TestColor}" />
     <SolidColorBrush x:Key="Blupur_MirageBrush" Color="{DynamicResource Blupur_MirageColor}" />
+    <SolidColorBrush x:Key="Blupur_PortGoreBrush" Color="{DynamicResource Blupur_PortGoreColor}" />
     <SolidColorBrush x:Key="Blupur_CloudBurstBrush" Color="{DynamicResource Blupur_CloudBurstColor}" />
     <SolidColorBrush x:Key="Blupur_AstronautBrush" Color="{DynamicResource Blupur_AstronautColor}" />
     <SolidColorBrush x:Key="Blupur_HoneyFlowerBrush" Color="{DynamicResource Blupur_HoneyFlowerColor}" />
