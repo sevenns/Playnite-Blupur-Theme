@@ -23,6 +23,8 @@
                                    Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
                                    HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.09" >
                         </FadeImage>
+
+                        <MainPanel DockPanel.Dock="Top" Grid.Row="0" />
                         
                         <DockPanel Grid.Row="1">
                             <FilterPanel x:Name="PART_FilterPanel"
