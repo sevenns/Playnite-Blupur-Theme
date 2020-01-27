@@ -24,11 +24,6 @@
                             </Style>
                         </Border.Style>
                         <DockPanel>
-                            <Button HorizontalAlignment="Right" VerticalAlignment="Top"
-                                    Content="r" FontFamily="Marlett"
-                                    Style="{StaticResource SimpleButton}"
-                                    Command="{MainViewModel CloseGameSideBarCommand}"
-                                    DockPanel.Dock="Top" Margin="0,10,15,5" />
 
                             <TextBlock Text="{DynamicResource LOCErrorNoGameSelected}" 
                                    Margin="0,20,0,0" DockPanel.Dock="Top"
@@ -56,28 +51,31 @@
                                     </Style>
                                 </DockPanel.Style>
 
-                                <DockPanel DockPanel.Dock="Top">
-                                    <Image Name="PART_ImageIcon" DockPanel.Dock="Left" MaxHeight="32" MaxWidth="32"
-                                           RenderOptions.BitmapScalingMode="Fant" Margin="0,0,10,0" />
-                                    <TextBlock Text="{Binding Game.DisplayName}" FontSize="{DynamicResource FontSizeLarger}"
-                                               TextWrapping="Wrap" DockPanel.Dock="Left"
-                                               VerticalAlignment="Center" Foreground="{StaticResource TextBrush}">
+                                <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+                                    <TextBlock
+                                        FontFamily="{DynamicResource FontFamily}"
+                                        Text="{Binding Game.DisplayName}"
+                                        FontSize="{DynamicResource FontSizeLarger}"
+                                        TextWrapping="Wrap"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{StaticResource TextBrush}"
+                                        Margin="0,20,0,0">
+
                                         <TextBlock.Effect>
-                                            <DropShadowEffect ShadowDepth="3"/>
+                                            <DropShadowEffect ShadowDepth="3" RenderingBias="Quality"/>
                                         </TextBlock.Effect>
                                     </TextBlock>
                                 </DockPanel>
 
-                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"
+                                <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+                                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"
                                             Margin="0,10,0,10">
-                                    <Button Name="PART_ButtonPlayAction" 
+                                        <Button Name="PART_ButtonPlayAction" 
                                             Width="150" Height="40" Style="{DynamicResource PlayButton}" />
-                                    <Button Name="PART_ButtonContextAction" 
+                                        <Button Name="PART_ButtonContextAction" 
                                             Width="150" Height="40" />
-                                    <Button Name="PART_ButtonMoreActions"
-                                            Content="{DynamicResource LOCMoreAction}"
-                                            Width="150" Height="40" Margin="10,0,0,0" />
-                                </StackPanel>
+                                    </StackPanel>
+                                </DockPanel>
 
                                 <ScrollViewer DockPanel.Dock="Top" HorizontalAlignment="Stretch"
                                               HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
