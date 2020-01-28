@@ -11,7 +11,9 @@
     <Thickness x:Key="PopupBorderThickness">2</Thickness>
     <Thickness x:Key="ControlBorderThickness">2</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">2</sys:Double>
-    <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
+    <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+    <sys:Double x:Key="ThumbRadiusX">0</sys:Double>
+    <sys:Double x:Key="ThumbRadiusY">0</sys:Double>
 
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
