@@ -7,7 +7,7 @@
 
 ## How to install
 
-- [Download](https://github.com/sevenns/Playnite-Blupur-Theme/releases) `Desktop` or `Fullscreen` version
+- [Download](https://github.com/sevenns/Playnite-Blupur-Theme/releases) last version
 - Unzip
 - Drag `.pthm` file into the Playnite window
 
@@ -20,7 +20,10 @@
   - Appearance
     - General
       - *Application font* - `Lato`
-      - *Use game background image as window background* - `Disable`
+      - *Use game background image as window background* - `Enable`
+        - *Blur background* - `MAX`
+        - *Darken background* - `MIN`
+        - *Show on Grid view* - `Disable`
     - Advanced
       - *Font sizes* - `12`, `14`, `18`, `20`, `32`
       - *Text rendering mode* - `Auto`
@@ -29,7 +32,7 @@
       - *Show game icons on Details view list* - `Enable`
       - *Game list icon height* - `32`
       - Game fields to be displayed on details panel
-        - *Cover image* - `Disable`
+        - *Cover image* - `Enable`
         - *Background Image* - `Enable`
     - Grid view
       - *Show game names on Grid view* - `Disable`
@@ -37,8 +40,10 @@
       - *Grid item border width* - `0`
       - *Draw grid item background* - `Enable`
     - Layout
-      - *Grid view details position* - `Left` `454`
-      - *Details view game list position* - `Left` `454`
+      - *Filter panel position* - `Right` `250`
+      - *Explorer panel position* - `Right` `250`
+      - *Details view game list position* - `Left` `400`
+      - *Draw separator between panels* - `Disable`
 
 ## Fullscreen
 
