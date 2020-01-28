@@ -53,10 +53,125 @@
                                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="720" ImageDarkeningBrush="{DynamicResource ImageOverlay}"/>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <Button Name="PART_ButtonPlayAction"
-                                                    Width="150" Height="40" Style="{DynamicResource PlayButton}" />
-                                    <Button Name="PART_ButtonContextAction" 
-                                                    Width="150" Height="40" />
+                                    <Button
+                                        x:Name="PART_ButtonPlayAction"
+                                        Width="50"
+                                        Height="50"
+                                        BorderThickness="0"
+                                        Background="Transparent"
+                                        Padding="0"
+                                        Cursor="Hand">
+
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                                                <Setter Property="RenderTransform">
+                                                    <Setter.Value>
+                                                        <ScaleTransform />
+                                                    </Setter.Value>
+                                                </Setter>
+
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Border
+                                                                x:Name="Border"
+                                                                Width="50"
+                                                                Height="50"
+                                                                Cursor="Hand"
+                                                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                                                CornerRadius="50">
+
+                                                                <TextBlock
+                                                                    x:Name="Icon"
+                                                                    Text="&#xec74;"
+                                                                    FontFamily="{StaticResource FontIcoFont}"
+                                                                    FontSize="20" 
+                                                                    Foreground="{DynamicResource Blupur_HoneyFlowerBrush}"
+                                                                    VerticalAlignment="Center"
+                                                                    HorizontalAlignment="Center"
+                                                                />
+
+                                                                <Border.Style>
+                                                                    <Style TargetType="Border">
+                                                                        <Setter Property="Background" Value="{DynamicResource Blupur_MediumRedVioletBrush}" />
+
+                                                                        <Style.Triggers>
+                                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                                <Setter Property="Background" Value="{DynamicResource Blupur_FuchsiaBrush}" />
+                                                                            </Trigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </Border.Style>
+                                                            </Border>
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter Property="Background" Value="{DynamicResource Blupur_FuchsiaBrush}" TargetName="Border" />
+                                                                    <Setter Property="Effect" Value="{DynamicResource PlayButtonShadow}" TargetName="Border" />
+                                                                </Trigger>
+
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Trigger.EnterActions>
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation
+                                                                                    Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                                                    To="1.3"
+                                                                                    Duration="0:0:.3"
+                                                                                >
+                                                                                    <DoubleAnimation.EasingFunction>
+                                                                                        <CubicEase EasingMode="EaseOut"/>
+                                                                                    </DoubleAnimation.EasingFunction>
+                                                                                </DoubleAnimation>
+                                                                                <DoubleAnimation
+                                                                                    Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                                                    To="1.3"
+                                                                                    Duration="0:0:.3"
+                                                                                >
+                                                                                    <DoubleAnimation.EasingFunction>
+                                                                                        <CubicEase EasingMode="EaseOut"/>
+                                                                                    </DoubleAnimation.EasingFunction>
+                                                                                </DoubleAnimation>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </Trigger.EnterActions>
+                                                                    <Trigger.ExitActions>
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation
+                                                                                    Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                                                    To="1"
+                                                                                    Duration="0:0:.3"
+                                                                                >
+                                                                                    <DoubleAnimation.EasingFunction>
+                                                                                        <CubicEase EasingMode="EaseOut"/>
+                                                                                    </DoubleAnimation.EasingFunction>
+                                                                                </DoubleAnimation>
+                                                                                <DoubleAnimation
+                                                                                    Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                                                    To="1"
+                                                                                    Duration="0:0:.3"
+                                                                                >
+                                                                                    <DoubleAnimation.EasingFunction>
+                                                                                        <CubicEase EasingMode="EaseOut"/>
+                                                                                    </DoubleAnimation.EasingFunction>
+                                                                                </DoubleAnimation>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </Trigger.ExitActions>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button
+                                        Name="PART_ButtonContextAction" 
+                                        Width="150"
+                                        Height="40"
+                                    />
                                 </Grid>
                             </Grid>
 
