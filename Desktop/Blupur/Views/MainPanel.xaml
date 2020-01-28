@@ -102,6 +102,63 @@
                                 </Border>
                             </Grid>
 
+                            <CheckBox
+                                x:Name="PART_ToggleFilter"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                DockPanel.Dock="Right">
+
+                                <CheckBox.Style>
+                                    <Style TargetType="CheckBox">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate>
+                                                    <Border
+                                                        x:Name="Border"
+                                                        Width="50"
+                                                        Height="50"
+                                                        Cursor="Hand"
+                                                        WindowChrome.IsHitTestVisibleInChrome="True">
+
+                                                        <TextBlock
+                                                            x:Name="Icon"
+                                                            Text="&#xef29;"
+                                                            FontFamily="{StaticResource FontIcoFont}"
+                                                            FontSize="18" 
+                                                            Foreground="{StaticResource TextBrush}"
+                                                            VerticalAlignment="Center"
+                                                            HorizontalAlignment="Center"
+                                                        />
+
+                                                        <Border.Style>
+                                                            <Style TargetType="Border">
+                                                                <Setter Property="Background" Value="Transparent" />
+
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" />
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Border.Style>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" TargetName="Border" />
+                                                        </Trigger>
+                                                        <Trigger Property="Tag" Value="{StaticResource True}">
+                                                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" TargetName="Icon" />
+                                                        </Trigger>
+                                                        <Trigger Property="Tag" Value="{StaticResource False}">
+                                                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" TargetName="Icon" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </CheckBox.Style>
+                            </CheckBox>
+
                             <Button
                                 x:Name="PART_ButtonSteamFriends"
                                 DockPanel.Dock="Right"
@@ -159,63 +216,6 @@
                                     </Style>
                                 </Button.Style>
                             </Button>
-
-                            <CheckBox
-                                x:Name="PART_ToggleFilter"
-                                WindowChrome.IsHitTestVisibleInChrome="True"
-                                DockPanel.Dock="Right">
-
-                                <CheckBox.Style>
-                                    <Style TargetType="CheckBox">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate>
-                                                    <Border
-                                                        x:Name="Border"
-                                                        Width="50"
-                                                        Height="50"
-                                                        Cursor="Hand"
-                                                        WindowChrome.IsHitTestVisibleInChrome="True">
-
-                                                        <TextBlock
-                                                            x:Name="Icon"
-                                                            Text="&#xef29;"
-                                                            FontFamily="{StaticResource FontIcoFont}"
-                                                            FontSize="18" 
-                                                            Foreground="{StaticResource TextBrush}"
-                                                            VerticalAlignment="Center"
-                                                            HorizontalAlignment="Center"
-                                                        />
-
-                                                        <Border.Style>
-                                                            <Style TargetType="Border">
-                                                                <Setter Property="Background" Value="Transparent" />
-
-                                                                <Style.Triggers>
-                                                                    <Trigger Property="IsMouseOver" Value="True">
-                                                                        <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" />
-                                                                    </Trigger>
-                                                                </Style.Triggers>
-                                                            </Style>
-                                                        </Border.Style>
-                                                    </Border>
-                                                    <ControlTemplate.Triggers>
-                                                        <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" TargetName="Border" />
-                                                        </Trigger>
-                                                        <Trigger Property="Tag" Value="{StaticResource True}">
-                                                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" TargetName="Icon" />
-                                                        </Trigger>
-                                                        <Trigger Property="Tag" Value="{StaticResource False}">
-                                                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" TargetName="Icon" />
-                                                        </Trigger>
-                                                    </ControlTemplate.Triggers>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </CheckBox.Style>
-                            </CheckBox>
 
                             <CheckBox
                                 x:Name="PART_ToggleNotifications"
