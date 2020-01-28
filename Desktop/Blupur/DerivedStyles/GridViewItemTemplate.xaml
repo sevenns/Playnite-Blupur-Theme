@@ -18,10 +18,14 @@
                                 Height="{Settings GridItemHeight}"
                                 Cursor="Hand">
 
-                                <Image Name="PART_ImageCover"
-                                       RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"
-                                       Stretch="{Settings CoverArtStretch}" />
+                                <Image
+                                    Name="PART_ImageCover"
+                                    RenderOptions.BitmapScalingMode="Fant"
+                                    StretchDirection="Both"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Stretch="{Settings CoverArtStretch}"
+                                />
 
                                 <Border Background="#99000000" x:Name="TextGameName" Visibility="Collapsed">
                                     <TextBlock Text="{Binding DisplayName}"
@@ -30,13 +34,63 @@
                                                TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                                HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
-                                <Button Name="PART_ButtonInfo"
-                                        VerticalAlignment="Top"
-                                        Width="{Settings GridItemWidth}"
-                                        Height="{Settings GridItemHeight}"
-                                        BorderThickness="0"
-                                        Background="Transparent"
-                                        HorizontalAlignment="Left"/>
+                                <Button
+                                    Name="PART_ButtonPlay"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Right"
+                                    FontFamily="{StaticResource FontIcoFont}"
+                                    Width="50"
+                                    Height="50"
+                                    Visibility="Hidden">
+
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Border
+                                                            x:Name="Border"
+                                                            Width="50"
+                                                            Height="50"
+                                                            Cursor="Hand"
+                                                            WindowChrome.IsHitTestVisibleInChrome="True">
+
+                                                            <TextBlock
+                                                                x:Name="Icon"
+                                                                Text="&#xec74;"
+                                                                FontFamily="{StaticResource FontIcoFont}"
+                                                                FontSize="18" 
+                                                                Foreground="{DynamicResource Blupur_MediumRedVioletBrush}"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                            />
+
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Setter Property="Background" Value="Transparent" />
+
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                                            <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" TargetName="Border" />
+                                                            </Trigger>
+                                                            <DataTrigger Binding="{Binding IsInstalled}" Value="False">
+                                                                <Setter Property="Text" Value="&#xef08;" TargetName="Icon" />
+                                                            </DataTrigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
                             </Grid>
                             <TextBlock Text="{Binding DisplayName}"
                                    Style="{DynamicResource BaseTextBlockStyle}"                                                                   
@@ -48,6 +102,10 @@
                         </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="PART_ButtonPlay"/>
+                        </Trigger>
+
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding CoverImage}" Value="{x:Null}" />

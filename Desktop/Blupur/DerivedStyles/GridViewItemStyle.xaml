@@ -10,7 +10,7 @@
 
         <Setter Property="RenderTransform">
             <Setter.Value>
-                <ScaleTransform x:Name="scaleTransform" />
+                <ScaleTransform />
             </Setter.Value>
         </Setter>
 
@@ -22,48 +22,46 @@
                         Margin="{Settings ItemSpacingMargin}"
                         x:Name="ItemGrid">
 
-                        <Border
-                            x:Name="SelectionBorder"
-                            BorderThickness="3"
-                            Margin="-3"
-                            CornerRadius="{DynamicResource ControlCornerRadius}"
-                         />
-
-                        <ContentPresenter />
+                        <ContentPresenter x:Name="Presenter"/>
 
                         <Canvas
-                            x:Name="Overlay" 
+                            x:Name="UninstalledOverlay"
                             Background="Black" 
-                            Opacity="0.6"
+                            Opacity="0.55"
+                            Visibility="Hidden"
+                            Cursor="Hand"
+                        />
+                        <Canvas
+                            x:Name="BaseOverlay"
+                            Background="Black" 
+                            Opacity="0.1"
                             Visibility="Hidden"
                             Cursor="Hand"
                         />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding IsInstalled}" Value="False">
-                            <Setter Property="Visibility" Value="Visible" TargetName="Overlay" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="UninstalledOverlay" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BaseOverlay" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding IsInstalled}" Value="True">
-                            <Setter Property="Visibility" Value="Hidden" TargetName="Overlay" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="UninstalledOverlay" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BaseOverlay" />
                         </DataTrigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource Blupur_HoneyFlowerBrush}" TargetName="SelectionBorder"/>
-                        </Trigger>
-
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="SelectionBorder"/>
                             <Setter Property="Panel.ZIndex" Value="100"/>
-                            <Setter Property="Visibility" Value="Hidden" TargetName="Overlay" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="UninstalledOverlay" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BaseOverlay" />
                         </Trigger>
 
-                        <Trigger Property="IsSelected" Value="True">
+                        <Trigger Property="IsMouseOver" Value="True">
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
                                             Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                            To="1.1"
+                                            To="1.05"
                                             Duration="0:0:.3"
                                         >
                                             <DoubleAnimation.EasingFunction>
@@ -72,7 +70,7 @@
                                         </DoubleAnimation>
                                         <DoubleAnimation
                                             Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                            To="1.1"
+                                            To="1.05"
                                             Duration="0:0:.3"
                                         >
                                             <DoubleAnimation.EasingFunction>
