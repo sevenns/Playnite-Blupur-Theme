@@ -8,9 +8,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type LibraryListView}">
-                    <GamesGridView x:Name="PART_ListGames"
-                                   d:DesignWidth="1280" d:DesignHeight="960"
-                                   d:DataContext="{x:Static DesignMainViewModel.DesignIntance}"/>
+                    <GamesGridView
+                        x:Name="PART_ListGames"
+                        d:DesignWidth="1280" d:DesignHeight="960"
+                        d:DataContext="{x:Static DesignMainViewModel.DesignIntance}"
+                        Margin="0,20,0,0"
+                    />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

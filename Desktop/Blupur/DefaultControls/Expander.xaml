@@ -49,7 +49,7 @@
     </Style>
 
     <Style TargetType="{x:Type Expander}">
-        <Setter Property="Background" Value="{DynamicResource ExpanderBackgroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Template">
@@ -59,7 +59,7 @@
                         <ToggleButton BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
                                       Style="{DynamicResource ExpanderDownHeaderStyle}"
                                       Padding="{TemplateBinding Padding}"
-                                      MinHeight="25" DockPanel.Dock="Top"
+                                      MinHeight="50" DockPanel.Dock="Top"
                                       Background="{TemplateBinding Background}"
                                       Content="{TemplateBinding Header}"
                                       IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />

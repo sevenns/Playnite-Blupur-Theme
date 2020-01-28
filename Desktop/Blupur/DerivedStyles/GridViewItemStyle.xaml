@@ -6,24 +6,106 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform />
+            </Setter.Value>
+        </Setter>
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Grid Background="{DynamicResource GridItemBackgroundBrush}"
-                          Margin="{Settings ItemSpacingMargin}"
-                          x:Name="ItemGrid">
-                        <Border x:Name="SelectionBorder" BorderThickness="3" Margin="-3" />
-                        <ContentPresenter />
+                    <Grid
+                        Background="{DynamicResource GridItemBackgroundBrush}"
+                        Margin="{Settings ItemSpacingMargin}"
+                        x:Name="ItemGrid">
+
+                        <ContentPresenter x:Name="Presenter"/>
+
+                        <Canvas
+                            x:Name="UninstalledOverlay"
+                            Background="Black" 
+                            Opacity="0.55"
+                            Visibility="Hidden"
+                            Cursor="Hand"
+                        />
+                        <Canvas
+                            x:Name="BaseOverlay"
+                            Background="Black" 
+                            Opacity="0.1"
+                            Visibility="Hidden"
+                            Cursor="Hand"
+                        />
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="SelectionBorder"/>
-                            <Setter Property="Canvas.ZIndex" Value="90" />
-                        </Trigger>
+                        <DataTrigger Binding="{Binding IsInstalled}" Value="False">
+                            <Setter Property="Visibility" Value="Visible" TargetName="UninstalledOverlay" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BaseOverlay" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsInstalled}" Value="True">
+                            <Setter Property="Visibility" Value="Hidden" TargetName="UninstalledOverlay" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BaseOverlay" />
+                        </DataTrigger>
+
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="SelectionBorder"/>
-                            <Setter Property="Canvas.ZIndex" Value="90" />
+                            <Setter Property="Panel.ZIndex" Value="100"/>
+                            <Setter Property="Visibility" Value="Hidden" TargetName="UninstalledOverlay" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BaseOverlay" />
                         </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                            To="1.05"
+                                            Duration="0:0:.3"
+                                        >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                            To="1.05"
+                                            Duration="0:0:.3"
+                                        >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                            To="1"
+                                            Duration="0:0:.3"
+                                        >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                            To="1"
+                                            Duration="0:0:.3"
+                                        >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
                         <DataTrigger Binding="{Settings ShowGridItemBackground}" Value="False">
                             <Setter Property="Background" Value="Transparent" TargetName="ItemGrid" />
                         </DataTrigger>

@@ -24,18 +24,61 @@
                             </Style>
                         </Border.Style>
                         <DockPanel Background="{TemplateBinding Background}">
-                            <DockPanel Margin="10,8,5,12" DockPanel.Dock="Top">
-                                <Button Content="r" FontFamily="Marlett"
-                                        Style="{StaticResource SimpleButton}"
-                                        DockPanel.Dock="Right" Margin="0,0,5,0"
-                                        Name="PART_ButtonClose"/>
-                                <Button DockPanel.Dock="Left" Content="{StaticResource LOCClearFilters}"                                        
-                                        HorizontalAlignment="Left"
-                                        Style="{StaticResource SimpleButton}"
-                                        Name="PART_ButtonClear"/>
+                            <DockPanel DockPanel.Dock="Bottom">
+                                <Button
+                                    Name="PART_ButtonClear"
+                                    Content="{StaticResource LOCClearFilters}"
+                                    Width="{Settings FilterPanelWitdh}"
+                                    Height="50">
+
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Border
+                                                            x:Name="Border"
+                                                            Width="{Settings FilterPanelWitdh}"
+                                                            Height="50"
+                                                            Cursor="Hand"
+                                                            WindowChrome.IsHitTestVisibleInChrome="True">
+
+                                                            <TextBlock
+                                                            x:Name="Icon"
+                                                            Text="&#xeff6;"
+                                                            FontFamily="{StaticResource FontIcoFont}"
+                                                            FontSize="18" 
+                                                            Foreground="{StaticResource TextBrush}"
+                                                            VerticalAlignment="Center"
+                                                            HorizontalAlignment="Center"
+                                                        />
+
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Setter Property="Background" Value="Transparent" />
+
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                                            <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="{DynamicResource PanelSeparatorBrush}" TargetName="Border" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
                             </DockPanel>
                             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
-                                      DockPanel.Dock="Top" Padding="0,0,0,15">
+                                      DockPanel.Dock="Bottom" Padding="0,0,0,15">
                                 <StackPanel>
                                     <StackPanel.Resources>
                                         <Style x:Key="FilterCheck" TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
